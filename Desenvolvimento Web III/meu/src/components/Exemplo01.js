@@ -1,15 +1,19 @@
 import React from 'react';
+import VerificaIdade from './VerificaIdade';
 
 export default function Exemplo01(props) {
-    console.log(props);
-        return(
-            <div>
-                <h1>Primeiro Componente!</h1>
-                <p>
-                    Seja bem-vindo(a) { props.nome } <br/>
-                    Sua média final é: {props.nota} <br/>
-                    Situação: {props.nota >= 5 ? "aprovado": 'reprovado'}
-                </p>
-            </div>
+    let idadeIdeal = props.idade >= 18 ? props.idade : 18;
+    return(
+        <div>
+            <h1>Primeiro Componente!</h1>
+            <p>
+                Nome: {props.nome}
+            </p>
+            <p>
+                Idade para dirigir: {idadeIdeal}
+            </p>
+            {/* <VerificaIdade nome={props.nome} idade={props.idade}/> */}
+            <VerificaIdade {...props}/>
+        </div>
     );
 }

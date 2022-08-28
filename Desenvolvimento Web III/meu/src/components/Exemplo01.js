@@ -13,7 +13,6 @@ export default function Exemplo01(props) {
                 Idade para dirigir: {idadeIdeal}
             </p>
             {/* <VerificaIdade nome={props.nome} idade={props.idade}/> */}
-            <VerificaIdade {...props}/>
-        </div>
+            <VerificaIdade {...props}/> </div>
     );
 }

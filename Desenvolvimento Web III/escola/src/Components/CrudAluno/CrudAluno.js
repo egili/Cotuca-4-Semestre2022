@@ -34,9 +34,9 @@ export default class CrudAluno extends Component {
         const url = aluno.id ? `${urlAPI}/${aluno.id}` : urlAPI;
 
         axios[metodo](url, aluno)
-            .then(resp => {
-                const lista = this.getListaAtualizada(resp.data)
-                this.setState({ aluno: initialState.aluno, lista })
+        .then(resp => {
+            const lista = this.getListaAtualizada(resp.data)
+            this.setState({ aluno: initialState.aluno, lista })
         })
     }
 
@@ -68,9 +68,9 @@ export default class CrudAluno extends Component {
             console.log("entrou no confirm");
 
             axios['delete'](url, aluno)
-                .then(resp => {
-                    const lista = this.getListaAtualizada(aluno, false)
-                    this.setState({ aluno: initialState.aluno, lista })
+            .then(resp => {
+                const lista = this.getListaAtualizada(aluno, false)
+                this.setState({ aluno: initialState.aluno, lista })
             })
         }
     }

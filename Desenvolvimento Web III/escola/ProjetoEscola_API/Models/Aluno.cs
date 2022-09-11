@@ -4,11 +4,11 @@ namespace ProjetoEscola_API.Models
 {
     public class Aluno
     {
-        public int id       {get; set;} // entity framework, toda tabela precisa ter o campo id
+        public int id {get; set;} // entity framework, toda tabela precisa ter o campo id
         
         [Required]
         [StringLength(5)]
-        public string? ra   {get; set;}
+        public string? ra {get; set;}
 
         [Required]
         [StringLength(30)]

@@ -18,8 +18,9 @@ export default class CrudAluno extends Component {
 
     componentDidMount() {
         axios(urlAPI)
-        .then(result => {
-            console.log(result.data);
+        .then(resp => {
+            console.log(resp.data);
+            this.setState({ lista: resp.data })
         })
     }
 

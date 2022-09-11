@@ -10,12 +10,12 @@ namespace ProjetoEscola_API.Controllers
     {
         private EscolaContext _context;
 
-        public AlunoController(EscolaContext context){
+        public AlunoController(EscolaContext context) {
             _context = context;
         }
 
         [HttpGet]
-        public ActionResult<List<Aluno>> GetAll(){
+        public ActionResult<List<Aluno>> GetAll() {
             return _context.Aluno.ToList();
         }
     }

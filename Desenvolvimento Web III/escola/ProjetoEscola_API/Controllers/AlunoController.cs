@@ -28,10 +28,6 @@ namespace ProjetoEscola_API.Controllers
 
             try {
                 var result = _context.Aluno.Find(AlunoId);
-                /*if (result == null) {
-                    return NotFound();
-                }
-                return Ok(result);*/
 
                 return result == null ? NotFound() : Ok(result);
             }catch {
@@ -50,11 +46,9 @@ namespace ProjetoEscola_API.Controllers
             }catch {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }
-            // retorna BadRequest se não conseguiu incluir
             return BadRequest();
         }
         
-
         [HttpPut("{AlunoId}")]
         public async Task<IActionResult> put(int AlunoId, Aluno dadosAlunoAlt) {
             try {
@@ -84,15 +78,15 @@ namespace ProjetoEscola_API.Controllers
                 var aluno = await _context.Aluno.FindAsync(AlunoId);
 
                 if (aluno == null) {
-                    //método do EF
                     return NotFound();
                 }
 
                 _context.Remove(aluno);
 
                 await _context.SaveChangesAsync();
+
                 return NoContent();
-            }catch {
+            }catch{
                 return this.StatusCode(StatusCodes.Status500InternalServerError,"Falha no acesso ao banco de dados.");
             }       
         }

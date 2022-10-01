@@ -25,9 +25,8 @@ namespace ProjetoEscola_API.Controllers
         [HttpGet("{CursoId}")]
         public ActionResult<List<Curso>> Get(int CursoId){
             try{
-                var result = _context.Curso.Find(CursoId);
-
-                return result == null ? NotFound() : Ok(result);
+                //var result = ;
+                return _context.Curso.Find(CursoId) == null ? NotFound() : Ok(result);
             }catch{
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }

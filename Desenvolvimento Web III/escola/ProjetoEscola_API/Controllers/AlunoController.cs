@@ -27,9 +27,8 @@ namespace ProjetoEscola_API.Controllers
         public ActionResult<List<Aluno>> Get(int AlunoId) {
 
             try {
-                var result = _context.Aluno.Find(AlunoId);
-
-                return result == null ? NotFound() : Ok(result);
+                //var result = _context.Aluno.Find(AlunoId);
+                return _context.Aluno.Find(AlunoId) == null ? NotFound() : Ok(result);
             }catch {
                 return this.StatusCode(StatusCodes.Status500InternalServerError, "Falha no acesso ao banco de dados.");
             }

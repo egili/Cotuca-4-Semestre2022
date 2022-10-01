@@ -6,16 +6,16 @@ namespace ProjetoEscola_API.Models
     {
         public int id {get; set;} // entity framework, toda tabela precisa ter o campo id
         
-        [Required]
-        [StringLength(5)]
+        //[Required]
+        //[StringLength(5)]
         public string? ra {get; set;}
 
-        [Required]
-        [StringLength(30)]
+        //[Required]
+        //[StringLength(30)]
         public string? nome {get; set;}
 
-        [Required]
-        [StringLength(2)]
+       // [Required]
+        //[StringLength(2)]
         public int codCurso {get; set;}
     }
 }

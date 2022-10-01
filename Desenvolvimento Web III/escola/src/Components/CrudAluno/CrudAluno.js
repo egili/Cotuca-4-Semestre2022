@@ -5,7 +5,7 @@ import Main from '../template/Main';
 
 const title = "Cadastro de Alunos";
 
-const urlAPI = "http://localhost:5000/api/aluno";
+const urlAPI = "http://localhost:5166/api/aluno";
 
 const initialState = {
     aluno: { id: 0, ra: '', nome:'', codCurso: 0},
